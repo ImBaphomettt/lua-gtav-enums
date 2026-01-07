@@ -1,0 +1,9 @@
+--- RM CODE: These must match the SCRIPT_ eOpenedFromSource values in Editor.h
+---@class EDITOR_OPENED_FROM_SOURCE
+EDITOR_OPENED_FROM_SOURCE = {
+	EOFS_UNKNOWN = 0,
+	EOFS_SCRIPT_DEFAULT = 1,
+	EOFS_SCRIPT_LANDING_PAGE = 2,
+	EOFS_SCRIPT_DIRECTOR = 3,
+}
+

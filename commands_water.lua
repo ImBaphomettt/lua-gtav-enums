@@ -1,0 +1,8 @@
+--- Make sure this is insync with commands_water.h enum
+---@class SCRIPT_WATER_TEST_RESULT
+SCRIPT_WATER_TEST_RESULT = {
+	SCRIPT_WATER_TEST_RESULT_NONE = 0,
+	SCRIPT_WATER_TEST_RESULT_WATER = 1,
+	SCRIPT_WATER_TEST_RESULT_BLOCKED = 2,
+}
+

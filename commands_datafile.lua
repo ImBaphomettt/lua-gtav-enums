@@ -1,0 +1,12 @@
+---@class DATAFILE_TYPE
+DATAFILE_TYPE = {
+	DF_NONE = 0,
+	DF_BOOL = 1,
+	DF_INT = 2,
+	DF_FLOAT = 3,
+	DF_STRING = 4,
+	DF_VEC3 = 5,
+	DF_DICT = 6,
+	DF_ARRAY = 7,
+}
+

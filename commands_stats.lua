@@ -1,0 +1,323 @@
+---@class STATS_DISPLAY_TYPE
+STATS_DISPLAY_TYPE = {
+	STAT_TYPE_NONE = 0,
+	STAT_TYPE_INT = 1,
+	STAT_TYPE_FLOAT = 2,
+	STAT_TYPE_STRING = 3,
+	STAT_TYPE_BOOLEAN = 4,
+	STAT_TYPE_DOUBLE = 5,
+	STAT_TYPE_UINT8 = 6,
+	STAT_TYPE_UINT16 = 7,
+	STAT_TYPE_UINT32 = 8,
+	STAT_TYPE_UINT64 = 9,
+	STAT_TYPE_TIME = 10,
+	STAT_TYPE_CASH = 11,
+	STAT_TYPE_PERCENT = 12,
+	STAT_TYPE_DEGREES = 13,
+	STAT_TYPE_WEIGHT = 14,
+	STAT_TYPE_MILES = 15,
+	STAT_TYPE_METERS = 16,
+	STAT_TYPE_FEET = 17,
+	STAT_TYPE_SECONDS = 18,
+	STAT_TYPE_CHART = 19,
+	STAT_TYPE_VELOCITY = 20,
+	STAT_TYPE_DATE = 21,
+	STAT_TYPE_POS = 22,
+	STAT_TYPE_TEXTLABEL = 23,
+	STAT_TYPE_PACKED = 24,
+	STAT_TYPE_USER_ID = 25,
+	MAX_STAT_TYPE = 26,
+}
+
+--- /PURPOSE
+--- /  Possible Title User Storage write conditions.
+---@class TUS_WRITE_COND
+TUS_WRITE_COND = {
+	TUS_OPETYPE_NOT_EQUAL = 0, -- Write if variable is not equal to the current value
+	TUS_OPETYPE_GREATER_THAN = 1, -- Write if variable is greater than the current value
+	TUS_OPETYPE_GREATER_OR_EQUAL = 2, -- Write if variable is greater than or equal to the current value
+	TUS_OPETYPE_LESS_THAN = 3, -- Write if variable is less than the current value
+	TUS_OPETYPE_LESS_OR_EQUAL = 4, -- Write if variable is equal to or less than the current value
+}
+
+--- PURPOSE: This structure contains the possible visibility flags for the stats in the frontend.
+---@class FRONTEND_SHOW_FLAG
+FRONTEND_SHOW_FLAG = {
+	STAT_FLAG_ALWAYS_SHOW = 1,
+	STAT_FLAG_INC_SHOW = 2,
+	STAT_FLAG_NEVER_SHOW = 4,
+}
+
+--- PURPOSE: Groups that should be used to write to certain leaderboard.
+---@class LB_GROUPS_
+LB_GROUPS_ = {
+	LB_GROUP_BANK_ID = 6083,
+	LB_GROUP_TERRITORY_ID = 6084,
+}
+
+--- PURPOSE: This structure contains the possible FAILURE codes for the cloud load.
+---@class CLOUD_LOAD_FAILURE_CODES
+CLOUD_LOAD_FAILURE_CODES = {
+	LOAD_FAILED_REASON_NONE = 0,
+	LOAD_FAILED_REASON_FAILED_TO_LOAD = 1,
+	LOAD_FAILED_REASON_FILE_CORRUPT = 2,
+	LOAD_FAILED_REASON_SERVER_TIMEOUT = 3,
+	LOAD_FAILED_REASON_SERVER_ERROR = 4,
+	LOAD_FAILED_REASON_FILE_NOT_FOUND = 5,
+	LOAD_FAILED_REASON_DIRTY_CLOUD_READ = 6,
+	LOAD_FAILED_REASON_DIRTY_PROFILE_STAT_READ = 7,
+	LOAD_FAILED_REASON_REFRESH_SAVEMIGRATION_STATUS = 8,
+	LOAD_FAILED_REASON_MAX = 9,
+}
+
+--- PURPOSE: This structure contains the possible FAILURE codes for the cloud save.
+---@class CLOUD_SAVE_FAILURE_CODES
+CLOUD_SAVE_FAILURE_CODES = {
+	HTTP_CODE_CLIENTCLOSEDREQUEST = 499, -- Client Closed Request
+	HTTP_CODE_FILENOTFOUND = 404, -- File Not Found
+	HTTP_CODE_REQUESTTIMEOUT = 408, -- Request Timeout
+	HTTP_CODE_TOOMANYREQUESTS = 429, -- Too Many Requests
+	HTTP_CODE_ANYSERVERERROR = 500, -- Any HTTP server error
+	HTTP_CODE_GATEWAYTIMEOUT = 504, -- Gateway Timeout
+	HTTP_CODE_NETCONNECTTIMEOUT = 599, -- Network connect timeout error
+}
+
+--- PURPOSE
+--- Identifies the online service section of Cloud from
+--- which to operate.
+--- Example:
+--- members/sc/2737264672/my/files/are/here
+--- members/xbl/63745723743/my/files/are/here
+---@class CLOUD_ONLINE_SERVICE
+CLOUD_ONLINE_SERVICE = {
+	RL_CLOUD_ONLINE_SERVICE_NATIVE = 0, -- "xbl" on xbox, "np" on ps3
+	RL_CLOUD_ONLINE_SERVICE_SC = 1, -- "sc" (Social Club)
+}
+--
+----- / PURPOSE:
+----- /    These represent commom save types so that we can choose the importance of the save.
+-----@class SAVE_TYPE
+--SAVE_TYPE = {
+--	STAT_SAVETYPE_DEFAULT            /* Disabled */ = 0,
+--	STAT_SAVETYPE_STUNTJUMP          /* Deferred Profile Flush */ = 1,
+--	STAT_SAVETYPE_CHEATER_CHANGE     /* Deferred Profile Flush */ = 2,
+--	STAT_SAVETYPE_IMMEDIATE_FLUSH    /* Cloud save, Profile Stats Flush */ = 3,
+--	STAT_SAVETYPE_COMMERCE_DEPOSIT   /* Disabled */ = 4,
+--	STAT_SAVETYPE_EXPLOITS           /* Deferred Profile Flush */ = 5,
+--	STAT_SAVETYPE_STORE              /* Disabled */ = 6,
+--	STAT_SAVETYPE_END_CODE = 7,
+--	STAT_SAVETYPE_AMBIENT = STAT_SAVETYPE_END_CODE  /* Cloud Only, Deferred Profile Flush */,
+--	STAT_SAVETYPE_CASH               /* Disabled */ = 9,
+--	STAT_SAVETYPE_END_GAMER_SETUP    /* Profile Flush Only */ = 10,
+--	STAT_SAVETYPE_END_SHOPPING       /* Profile Flush Only */ = 11,
+--	STAT_SAVETYPE_END_GARAGE         /* Cloud Only, Same as STAT_SAVETYPE_SCRIPT_MP_GLOBALS */ = 12,
+--	STAT_SAVETYPE_END_MISSION        /* Cloud Only, Deferred Profile Flush  */ = 13,
+--	STAT_SAVETYPE_END_ATM            /* Disabled */ = 14,
+--	STAT_SAVETYPE_PRE_STARTSTORE     /* Profile Flush, Cloud Save */ = 15,
+--	STAT_SAVETYPE_SCRIPT_MP_GLOBALS  /* Cloud Only */ = 16,
+--	STAT_SAVETYPE_PROLOGUE           /* Cloud Only */ = 17,
+--	STAT_SAVETYPE_CONTACTS           /* Disabled */ = 18,
+--	STAT_SAVETYPE_START_MATCH        /* Disabled */ = 19,
+--	STAT_SAVETYPE_START_SESSION      /* Cloud Only */ = 20,
+--	STAT_SAVETYPE_INTERACTION_MENU   /* Cloud Only, Deferred Profile Flush */ = 21,
+--	STAT_SAVETYPE_JOIN_SC            /* Disabled */ = 22,
+--	STAT_SAVETYPE_AMB_PROFILE_AWARD_TRACKER /* Cloud Only, Deferred Flush  */ = 23,
+--	STAT_SAVETYPE_PHOTOS             /* Deferred Profile Flush */ = 24,
+--	STAT_SAVETYPE_WEAPON_DROP        /* Disabled */ = 25,
+--	STAT_SAVETYPE_RANKUP             /* Cloud Only, Deferred Profile Flush */ = 26,
+--	STAT_SAVETYPE_END_MISSION_CREATOR /* Cloud Only, Deferred Profile Flush  */ = 27,
+--	STAT_SAVETYPE_CRITICAL = 28,
+--	STAT_SAVETYPE_END_CREATE_NEWCHAR = STAT_SAVETYPE_CRITICAL  /* Profile Flush, Cloud Save */,
+--	STAT_SAVETYPE_END_MATCH           /* Profile Flush, Cloud Save */ = 30,
+--	STAT_SAVETYPE_END_SESSION         /* Profile Flush, Cloud Save */ = 31,
+--	STAT_SAVETYPE_DELETE_CHAR         /* Profile Flush, Cloud Save */ = 32,
+--	STAT_SAVETYPE_MAX_NUMBER = 33,
+--}
+
+--- / PLAYSTATS function which covers anything being given to the player using the quick fix tool
+---@class QUICKFIX_ELEMENT
+QUICKFIX_ELEMENT = {
+	QF_NONE = 0,
+	QF_WEAPON_GIVE = 1,
+	QF_WEAPON_REMOVE = 2,
+	QF_VEHICLE_GIVE = 3,
+	QF_VEHICLE_REMOVE = 4,
+	QF_APARTMENT_GIVE = 5,
+	QF_APARTMENT_REMOVE = 6,
+	QF_CLOTHES_GIVE = 7,
+	QF_CLOTHES_REMOVE = 8,
+	QF_PROGRESS_GIVE = 9,
+}
+
+--- PURPOSE
+--- Enum with all leaderboard types.
+---@class LEADERBOARDS2_TYPES_ENUM
+LEADERBOARDS2_TYPES_ENUM = {
+	LEADERBOARD2_TYPE_INVALID = 0,
+	LEADERBOARD2_TYPE_PLAYER = 1, -- Ranks players
+	LEADERBOARD2_TYPE_CLAN = 2, -- Ranks clans
+	LEADERBOARD2_TYPE_CLAN_MEMBER = 3, -- Ranks members within a clan
+	LEADERBOARD2_TYPE_GROUP = 4, -- Ranks groups
+	LEADERBOARD2_TYPE_GROUP_MEMBER = 5, -- Ranks members within a group
+}
+
+--- Status for the migrate save operations.
+---@class MIGRATE_SAVE
+MIGRATE_SAVE = {
+	MIGRATE_SAVE_NONE = 0,
+	MIGRATE_SAVE_FAILED_SOURCE_IN_USE = 1,
+	MIGRATE_SAVE_FAILED_ALREADY_DONE = 2,
+	MIGRATE_SAVE_FAILED_IN_PROGRESS = 3,
+	MIGRATE_SAVE_FAILED_UNLOCK_ALREADY_USED = 4,
+	MIGRATE_SAVE_FAILED_INSUFFICIENT_PRIVILEGES = 5,
+	MIGRATE_SAVE_FAILED_CHEATER = 6,
+	MIGRATE_SAVE_FAILED_BANNED = 7,
+	MIGRATE_SAVE_FAILED_MAINTENANCE = 8,
+	MIGRATE_SAVE_FAILED_ACCT_CREATION_DATE = 9,
+	MIGRATE_SAVE_FAILED_ACCT_AGE = 10,
+	MIGRATE_SAVE_ERROR_DEST_ALREADY_DONE = 11,
+	MIGRATE_SAVE_ERROR_TOO_RICH = 12,
+	MIGRATE_SAVE_PENDING = 13,
+	MIGRATE_SAVE_FINISHED = 14,
+	MIGRATE_SAVE_FAILED = 15,
+}
+
+--- Save migration available platforms.
+---@class MIGRATION_PLATFORM
+MIGRATION_PLATFORM = {
+	PLATFORM_XBOX360 = 0,
+	PLATFORM_XBOXONE = 1,
+	PLATFORM_PS3 = 2,
+	PLATFORM_PS4 = 3,
+	PLATFORM_PC = 4,
+	PLATFORM_MAX = 5,
+}
+
+--- Save migration error codes.
+---@class MIGRATION_STATUS
+MIGRATION_STATUS = {
+	MIGRATION_STATUS_NONE = 0,
+	MIGRATION_STATUS_AVAILABLE = 1,
+	MIGRATION_STATUS_RUNNING = 2,
+	MIGRATION_STATUS_FAILED = 3,
+	MIGRATION_STATUS_ERROR_ALREADY_DONE = 4,
+	MIGRATION_STATUS_ERROR_NOT_AVAILABLE = 5,
+}
+
+--- Task status codes
+---@class TASK_NET_STATUS
+TASK_NET_STATUS = {
+	NET_STATUS_NONE = 0,
+	NET_STATUS_PENDING = 1,
+	NET_STATUS_FAILED = 2,
+	NET_STATUS_SUCCEEDED = 3,
+	NET_STATUS_CANCELED = 4,
+}
+
+--- Save migration error codes.
+---@class MIGRATION_RESULT_CODES
+MIGRATION_RESULT_CODES = {
+	MIGRATION_NONE = 0, -- This means its available
+	MIGRATION_ALREADY_DONE = 1,
+	MIGRATION_NOT_AVAILABLE = 2,
+}
+
+--- Save migration error codes.
+---@class SAVE_MIGRATION_STATUS
+SAVE_MIGRATION_STATUS = {
+	SMS_NONE = 0,
+	SMS_FAILED = 1,
+	SMS_CANCELED = 2,
+	SMS_SUCCEDDED = 3,
+	SMS_PENDING = 4,
+	SMS_SKIP_ACCOUNT_ALREADY_USED = 5,
+	SMS_SKIP_INVALID_STATUS = 6,
+}
+
+--- Cancel Save migration error codes.
+---@class CANCEL_SAVE_MIGRATION_STATUS
+CANCEL_SAVE_MIGRATION_STATUS = {
+	CSMS_NONE = 0,
+	CSMS_PENDING = 1,
+	CSMS_FAILED = 2,
+	CSMS_SUCCEDDED = 3,
+	CSMS_CANCELED = 4,
+}
+
+--- Status for the migrate save operations.
+---@class COMSUME_CONTENT_ERROR_CODE
+COMSUME_CONTENT_ERROR_CODE = {
+	ERROR_UNKNOWN = -1,
+	ERROR_NONE = 0,
+	ERROR_UNLOCK_ALREADY_USED = 4,
+}
+
+--- Policy for the recording of the stats using the commands below.
+---@class RECORD_STAT_POLICY
+RECORD_STAT_POLICY = {
+	RSP_SUM = 1,
+	RSP_GREATEST = 2,
+	RSP_LOWEST = 3,
+}
+
+--- Policy for the recording of the stats using the commands below.
+---@class RECORD_STAT
+RECORD_STAT = {
+	REC_STAT_NONE = 0,
+	REC_STAT_LONGEST_WHEELIE_DIST = 1,
+	REC_STAT_LONGEST_STOPPIE_DIST = 2,
+	REC_STAT_LONGEST_DRIVE_NOCRASH = 3,
+	REC_STAT_TOP_SPEED_CAR = 4,
+	REC_STAT_MOST_FLIPS_IN_ONE_JUMP = 5,
+	REC_STAT_MOST_SPINS_IN_ONE_JUMP = 6,
+	REC_STAT_HIGHEST_JUMP_REACHED = 7,
+	REC_STAT_FARTHEST_JUMP_DIST = 8,
+	REC_STAT_NUMBER_NEAR_MISS_NOCRASH = 9,
+	REC_STAT_LONGEST_SURVIVED_FREEFALL = 10,
+	REC_STAT_LOWEST_PARACHUTE_OPEN = 11,
+	REC_STAT_DIST_DRIVING_CAR_REVERSE = 12,
+	REC_STAT_LONGEST_SURVIVED_SKYDIVE = 13,
+	REC_STAT_NUMBER_STOLEN_VEHICLE = 14,
+	REC_STAT_PLAYERS_SET_ON_FIRE = 15,
+	REC_STAT_ON_FOOT_ALTITUDE = 16,
+	REC_STAT_FLIGHT_TIME_BELOW_20 = 17,
+	REC_STAT_FLIGHT_DIST_BELOW_20 = 18,
+	REC_STAT_FLIGHT_TIME_BELOW_100 = 19,
+	REC_STAT_FLIGHT_DIST_BELOW_100 = 20,
+	REC_STAT_PLANE_BARREL_ROLLS = 21,
+	REC_STAT_MELEE_KILLED_PLAYERS = 22,
+	REC_STAT_SNIPER_KILL_DISTANCE = 23,
+	REC_STAT_SNIPER_KILL = 24,
+	REC_STAT_DB_NON_TURRET_PLAYER_KILLS = 25,
+	REC_STAT_PLAYER_HEADSHOTS = 26,
+	REC_STAT_DIST_BAILING_FROM_VEHICLE = 27,
+	REC_STAT_PLAYER_VEHICLE_DAMAGES = 28,
+	REC_STAT_NEAR_MISS_PRECISE = 29,
+	REC_STAT_DIST_BEACHING_BOAT = 30,
+	REC_STAT_DIST_WALLRIDE = 31,
+}
+
+--- /PURPOSE
+--- /  Type of invite when started being a Goon
+---@class GOON_INVITE_TYPE
+GOON_INVITE_TYPE = {
+	GIT_DEBUG = 0,
+	GIT_NEARBY = 1,
+	GIT_FRIENDS = 2,
+	GIT_CREW = 3,
+	GIT_INDIVIDUAL = 4,
+	GIT_LOOKING_FOR_WORK = 5,
+}
+
+---@class TrackedStuntType
+TrackedStuntType = {
+	ST_FRONTFLIP = 0,
+	ST_BACKFLIP = 1,
+	ST_SPIN = 2,
+	ST_WHEELIE = 3,
+	ST_STOPPIE = 4,
+	ST_BOWLING_PIN = 5,
+	ST_FOOTBALL = 6,
+	ST_ROLL = 7,
+}
+

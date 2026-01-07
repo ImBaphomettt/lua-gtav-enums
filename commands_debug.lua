@@ -1,0 +1,7 @@
+---@class MAPDATA_TYPE
+MAPDATA_TYPE = {
+	MAPDATA_LOW = 0,
+	MAPDATA_MED = 1,
+	MAPDATA_HI = 2,
+}
+

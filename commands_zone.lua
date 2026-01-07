@@ -1,0 +1,21 @@
+---@class g_eMapAreas
+g_eMapAreas = {
+	MAP_BROOKLYN = 0,
+	MAP_BRONX = 1,
+	MAP_MANHATTAN = 2,
+	MAP_NEW_JERSEY = 3,
+	MAX_MAP_AREAS = 4,
+	UNKNOWN_MAP_AREA = 5,
+}
+
+--- When updating this enum, update eZoneScumminess in PopZones.h [2/4/2013 mdawe]
+---@class ZONE_SCUMMINESS
+ZONE_SCUMMINESS = {
+	SCUMMINESS_POSH = 0,
+	SCUMMINESS_NICE = 1,
+	SCUMMINESS_ABOVE_AVERAGE = 2,
+	SCUMMINESS_BELOW_AVERAGE = 3,
+	SCUMMINESS_CRAP = 4,
+	SCUMMINESS_SCUM = 5,
+}
+

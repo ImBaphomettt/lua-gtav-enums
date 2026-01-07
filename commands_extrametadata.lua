@@ -1,0 +1,54 @@
+---@class eShopPedApparel
+eShopPedApparel = {
+	SHOP_PED_COMPONENT = 0,
+	SHOP_PED_PROP = 1,
+	SHOP_PED_OUTFIT = 2,
+}
+
+--- / PURPOSE: Used to differentiate between the different types of clothes shops
+--- /    /// NOTE:
+--- /    Keep in sync with //depot/gta5/src/dev_ng/game/scene/ExtraMetadataDefs.psc
+---@class CLOTHES_SHOP_ENUM
+CLOTHES_SHOP_ENUM = {
+	CLO_SHOP_LOW = 0,
+	CLO_SHOP_MID = 1,
+	CLO_SHOP_HIGH = 2,
+	CLO_SHOP_GUN_LARGE = 3,
+	CLO_SHOP_GUN_SMALL = 4,
+	CLO_SHOP_AMB = 5,
+	CLO_SHOP_CASINO = 6,
+	CLO_SHOP_CAR_MEET = 7,
+	CLO_SHOP_ARMORY_FIXER = 8,
+	CLO_SHOP_MUSIC_STUDIO = 9,
+	CLO_SHOP_NONE = 10,
+}
+
+---@class eContentRightsTypes
+eContentRightsTypes = {
+	CRT_TATTOOS = 0,
+	CRT_PED_APPAREL = 1,
+	CRT_WEAPONS = 2,
+	CRT_VEHICLES = 3,
+}
+
+---@class TATTOO_FACTION_ENUM
+TATTOO_FACTION_ENUM = {
+	TATTOO_SP_MICHAEL = 0,
+	TATTOO_SP_FRANKLIN = 1,
+	TATTOO_SP_TREVOR = 2,
+	TATTOO_MP_FM = 3,
+	TATTOO_MP_FM_F = 4, --@notes CONDITION WAS CONVERTED AUTOMATICALLY; OLD CONDITION WAS: #IF USE_TU_CHANGES ... #ENDIF
+}
+
+---@class TATTOO_FACING
+TATTOO_FACING = {
+	TATTOO_FRONT = 0,
+	TATTOO_BACK = 1,
+	TATTOO_LEFT = 2,
+	TATTOO_RIGHT = 3,
+	TATTOO_FRONT_LEFT = 4,
+	TATTOO_BACK_LEFT = 5,
+	TATTOO_FRONT_RIGHT = 6,
+	TATTOO_BACK_RIGHT = 7,
+}
+
